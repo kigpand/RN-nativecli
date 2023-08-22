@@ -24,6 +24,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import Android from './components/Android';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -33,8 +34,8 @@ function Section({children, title}: SectionProps): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
-      <Text>안드로이드 되네요!</Text>
-      <Text>ios도 되요!</Text>
+      <Text>{title}</Text>
+      <Text>{children}</Text>
     </View>
   );
 }
@@ -47,36 +48,12 @@ function App(): JSX.Element {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <Android />
+    // <SafeAreaView>
+    //   <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+    //   <ScrollView contentInsetAdjustmentBehavior="automatic">
+    //   </ScrollView>
+    // </SafeAreaView>
   );
 }
 
