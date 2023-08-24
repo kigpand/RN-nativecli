@@ -1,6 +1,7 @@
 import {Text, View, StyleSheet, Button, Alert} from 'react-native';
 import ImageContainer from './Image';
 import {useState} from 'react';
+import Animation from './Animation';
 
 export default function Android() {
   const [active, setActive] = useState<boolean>(false);
@@ -12,6 +13,7 @@ export default function Android() {
 
   return (
     <View style={styles.andoridContainer}>
+      <Animation />
       <Text>Android</Text>
       <Button onPress={onPressBtn} title="touch!" />
       <View style={styles.view2}>
@@ -36,7 +38,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'green',
   },
   view3: {
-    flex: 3,
+    flex: 1,
     backgroundColor: 'pink',
   },
 });
