@@ -2,6 +2,7 @@ import {Text, View, StyleSheet, Button, Alert} from 'react-native';
 import ImageContainer from './Image';
 import {useState} from 'react';
 import Animation from './Animation';
+import SecondAnim from './SecondAmin';
 
 export default function Android() {
   const [active, setActive] = useState<boolean>(false);
@@ -13,8 +14,9 @@ export default function Android() {
 
   return (
     <View style={styles.andoridContainer}>
-      <Animation />
-      <Text>Android</Text>
+      <SecondAnim />
+      {/* <Animation /> */}
+      {/* <Text>Android</Text>
       <Button onPress={onPressBtn} title="touch!" />
       <View style={styles.view2}>
         <Text>Test</Text>
@@ -22,7 +24,7 @@ export default function Android() {
       <View style={styles.view3}>
         <Text>View3</Text>
       </View>
-      <ImageContainer active={active} />
+      <ImageContainer active={active} /> */}
     </View>
   );
 }
