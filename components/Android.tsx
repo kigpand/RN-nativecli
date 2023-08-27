@@ -3,6 +3,7 @@ import ImageContainer from './Image';
 import {useState} from 'react';
 import Animation from './Animation';
 import SecondAnim from './SecondAmin';
+import List from './List';
 
 export default function Android() {
   const [active, setActive] = useState<boolean>(false);
@@ -14,6 +15,7 @@ export default function Android() {
 
   return (
     <View style={styles.andoridContainer}>
+      <List />
       <SecondAnim />
       {/* <Animation /> */}
       {/* <Text>Android</Text>
