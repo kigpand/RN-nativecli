@@ -4,9 +4,12 @@ import {useState} from 'react';
 import Animation from './Animation';
 import SecondAnim from './SecondAmin';
 import List from './List';
+import InputContainer from './InputContainer';
+import Buttons from './Buttons';
 
 export default function Android() {
   const [active, setActive] = useState<boolean>(false);
+  const [page, setPage] = useState<number>(1);
 
   function onPressBtn() {
     Alert.alert('press!');
@@ -15,8 +18,10 @@ export default function Android() {
 
   return (
     <View style={styles.andoridContainer}>
-      <List />
-      <SecondAnim />
+      {page === 1 && <List />}
+      {page === 2 && <SecondAnim />}
+      {page === 3 && <Animation />}
+      {page === 4 && <InputContainer />}
       {/* <Animation /> */}
       {/* <Text>Android</Text>
       <Button onPress={onPressBtn} title="touch!" />
@@ -27,6 +32,7 @@ export default function Android() {
         <Text>View3</Text>
       </View>
       <ImageContainer active={active} /> */}
+      <Buttons onChangePage={(page: number) => setPage(page)} />
     </View>
   );
 }
